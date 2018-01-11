@@ -4,6 +4,9 @@
   "description": "A recording app for all you tank specs and stats",
   "author": "Dan B <snakebite_07@hotmail.co.uk>",
   "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "finalhandler": "^1.1.0",
     "http": "0.0.0",
