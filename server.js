@@ -1,15 +1,15 @@
-var finalhandler = require('finalhandler')
-var http = require('http')
-var serveStatic = require('serve-static')
+// server.js
+const express = require('express');
+const path = require('path');
+const serveStatic = require('serve-static');
 
-// Serve up public/ftp folder
-var serve = serveStatic('public/ftp', {'index': ['index.html', 'index.htm']})
+const app = express();
 
-// Create server
-var server = http.createServer(function onRequest (req, res) {
-  serve(req, res, finalhandler(req, res))
-})
+app.use(serveStatic(__dirname + '/dist'));
 
-// Listen
-console.log('Server running on port: ', process.env.PORT)
-server.listen(process.env.PORT)
+console.log(__dirname + '/dist')
+
+var port = process.env.PORT || 5000;
+
+app.listen(port);
+console.log('server started '+ port);
